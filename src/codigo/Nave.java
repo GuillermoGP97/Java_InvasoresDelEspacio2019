@@ -11,7 +11,7 @@ import javax.imageio.ImageIO;
 
 /**
  *
- * @author Jorge Cisneros
+ * @author Guillermo García Palma
  */
 public class Nave {
     public Image imagen = null;

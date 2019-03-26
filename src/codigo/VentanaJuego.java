@@ -21,7 +21,7 @@ import javax.swing.Timer;
 
 /**
  *
- * @author Jorge Cisneros
+ * @author Guillermo García Palma
  */
 public class VentanaJuego extends javax.swing.JFrame {
 
@@ -197,6 +197,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         for (int i = 0; i < filas; i++) {
             for (int j = 0; j < columnas; j++) {
                 listaMarcianos[i][j].setvX(listaMarcianos[i][j].getvX()* -1);
+                listaMarcianos[i][j].y+=15;//Hace que bajen.
             }
         }
     }
