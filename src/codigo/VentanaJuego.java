@@ -49,6 +49,7 @@ public class VentanaJuego extends javax.swing.JFrame {
     //imagen para cargar el spritesheet con todos los sprites del juego
     BufferedImage plantilla = null;
     Image [][] imagenes ;
+    Image fondo;
     
     Timer temporizador = new Timer(10, new ActionListener() {
         @Override
@@ -83,11 +84,18 @@ public class VentanaJuego extends javax.swing.JFrame {
         miNave.x = ANCHOPANTALLA / 2 - miNave.imagen.getWidth(this) / 2;
         miNave.y = ALTOPANTALLA - miNave.imagen.getHeight(this) - 40;
         
+        //fonndo
+        try{
+            fondo = ImageIO.read(getClass().getResource("/imagenes/fondo.png"));
+        }catch(IOException ex){
+            
+        }
+        
         /*miExplosion.imagenExplosion = imagenes[4][0];
         miExplosion.imagenExplosion2 = imagenes[4][1];*/
         //inicializo el array de marcianos
         //os reto a que hagais esto usando mods (es decir, usando el bucle for anidado)
-        
+
         //1 parametro: numero de la fila de marcianos que estoy creando
         //2º parametro: fila dentro del spritesheet del marciano que quiero pintar
         //3º parametro: columna dentro del spritesheet del marciano que quiero pintar
@@ -171,6 +179,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         g2.setColor(Color.BLACK);
         g2.fillRect(0, 0, ANCHOPANTALLA, ALTOPANTALLA);
 
+        g2.drawImage(fondo,0,0, null);
         ///////////////////////////////////////////////////////
         //redibujaremos aquí cada elemento
         g2.drawImage(miDisparo.imagen, miDisparo.x, miDisparo.y, null);
